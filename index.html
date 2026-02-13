@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thapelo Motimele — Portfolio</title>
+  <link rel="stylesheet" href="a.css">
+  <meta name="description" content="Thapelo Motimele — Graduate Mechatronics Engineer portfolio">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Thapelo Motimele</h1>
+        <div class="role">Graduate Mechatronics Engineer</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO: full-screen background image. Replace `hero.jpg` with your photo in the project root -->
+  <section class="hero" role="region" aria-label="About">
+    <div class="hero-bg" style="background-image: url('images/hero2.jpeg')"></div>
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <h1 class="hero-name" id="hero-name"></h1>
+        <h2 id="hero-greeting"></h2>
+        <p class="lead" id="hero-description"></p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about" class="about">
+      <h3 id="about-title"></h3>
+      <p id="about-content"></p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h3 id="skills-title"></h3>
+      <div id="skills-grid" class="skills-grid"></div>
+    </section>
+
+    <section id="projects-preview" class="projects-preview">
+      <h3 id="projects-title"></h3>
+      <div id="carousel-container" class="carousel-container"></div>
+      <div class="carousel-controls">
+        <button id="carousel-prev" class="carousel-btn carousel-btn-prev">❮</button>
+        <div id="carousel-dots" class="carousel-dots"></div>
+        <button id="carousel-next" class="carousel-btn carousel-btn-next">❯</button>
+      </div>
+      <div class="preview-cta">
+        <a href="project.html" class="btn">View All Projects →</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h3 id="contact-title"></h3>
+      <p id="contact-content"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small id="footer-copyright"></small></div>
+  </footer>
+
+  <div id="img-modal" class="img-modal" aria-hidden="true"><div class="img-modal-inner"><button id="img-modal-close" class="img-modal-close">✕</button><img id="img-modal-img" src="" alt=""/></div></div>
+
+  <script src="a.js"></script>
+</body>
+</html>
+    </body>
+    </html>

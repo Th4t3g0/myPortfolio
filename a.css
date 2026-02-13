@@ -1,0 +1,127 @@
+/* Professional portfolio styles — hero, projects, skills */
+:root{
+	--bg:#e8f1f7;
+	--surface:#e8f1f7;
+	--text:#0b1220;
+	--muted:#6b7280;
+	--accent:#0ea5a4; /* teal */
+	--accent-600:#059b91;
+	--nav-bg:#0b1b2b; /* deep navy */
+	--card-shadow: 0 10px 30px rgba(12,20,40,0.06);
+	/* Category colors */
+	--electrical:#ff7a5c; /* warm orange */
+	--mechanical:#7c5cff; /* purple */
+	--software:#2b8cff; /* blue */
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{background:var(--nav-bg);color:#fff}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand h1{margin:0;color:#fff;font-size:1.1rem}
+.brand .role{color:rgba(255,255,255,0.75);font-size:0.9rem}
+.main-nav a{margin-left:18px;color:rgba(255,255,255,0.8);text-decoration:none;padding:6px 8px;border-radius:6px}
+.main-nav a:hover{background:rgba(255,255,255,0.03);color:#fff}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;opacity:1;transition:max-height 0.4s ease, opacity 0.3s ease;max-height:100vh;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;filter:brightness(0.45)}
+.hero-overlay{position:relative;z-index:2}
+.hero-content{color:#fff;padding:40px;border:2px solid rgba(255,255,255,0.5);border-radius:12px;backdrop-filter:blur(0px);background:transparent;max-width:420px;min-height:550px;display:flex;flex-direction:column;justify-content:center;word-wrap:break-word;overflow-wrap:break-word}
+.hero-name{font-size:4rem;margin:0 0 16px;font-weight:900;letter-spacing:4px;text-shadow:3px 3px 12px rgba(0,0,0,0.5);background:linear-gradient(135deg, #fff, rgba(255,255,255,0.8));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h2{font-size:2.4rem;margin:0}
+.lead{max-width:700px;color:rgba(255,255,255,0.95);margin-top:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-600));color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(14,165,164,0.18)}
+.btn:hover{transform:translateY(-2px)}
+
+/* About & Skills */
+.about{margin:36px 0;padding:24px;border:2px solid rgba(14,165,164,0.4);border-radius:10px;background:rgba(14,165,164,0.02)}
+.skills{padding:24px;border:2px solid rgba(14,165,164,0.4);border-radius:10px;background:rgba(14,165,164,0.02);margin:36px 0}
+.contact{padding:24px;border:2px solid rgba(14,165,164,0.4);border-radius:10px;background:rgba(14,165,164,0.02);margin:36px 0}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:16px;align-items:stretch}
+.skill-block{background:var(--surface);padding:20px;border-radius:10px;box-shadow:var(--card-shadow);border:1px solid rgba(12,20,40,0.04);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:transform 0.2s ease, box-shadow 0.2s ease;cursor:pointer}
+.skill-block:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(12,20,40,0.12)}
+.skill-logo{width:100px;height:100px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;background:rgba(14,165,164,0.08);border-radius:10px;padding:0px}
+.skill-logo img{width:100%;height:100%;object-fit:contain}
+.skill-name{font-weight:600;color:var(--nav-bg);font-size:0.95rem}
+.skill{background:var(--surface);padding:16px;border-radius:10px;box-shadow:var(--card-shadow);border:1px solid rgba(12,20,40,0.04)}
+.skill strong{display:block;color:var(--nav-bg)}
+.skill span{color:var(--muted);display:block;margin-top:6px}
+
+/* Projects Preview Carousel */
+.projects-preview{margin:50px 0}
+.carousel-container{position:relative;overflow:hidden;border-radius:10px;background:var(--surface);box-shadow:var(--card-shadow);border:1px solid rgba(12,20,40,0.04)}
+.carousel-slide{display:none;opacity:0;transition:opacity 0.5s ease}
+.carousel-slide.active{display:block;opacity:1}
+.slide-content{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:24px}
+.slide-image{width:100%;height:280px;object-fit:cover;border-radius:8px}
+.slide-image-placeholder{width:100%;height:280px;background:linear-gradient(135deg, var(--accent), var(--accent-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:600;text-align:center;padding:20px}
+.slide-info h4{margin:0 0 8px;font-size:1.3rem;color:var(--nav-bg)}
+.slide-meta{color:var(--muted);font-size:0.9rem;margin:0 0 10px}
+.slide-desc{color:var(--text);margin:10px 0;line-height:1.6}
+.slide-tech{color:var(--accent);font-weight:600;font-size:0.9rem;margin:12px 0 0}
+
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:20px;padding:16px;background:rgba(12,20,40,0.02)}
+.carousel-btn{background:#fff;border:2px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:6px;cursor:pointer;font-size:1.1rem;font-weight:bold;transition:all 0.2s}
+.carousel-btn:hover{background:var(--accent);color:#fff}
+.carousel-dots{display:flex;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(12,20,40,0.1);cursor:pointer;transition:all 0.2s}
+.dot.active{background:var(--accent);width:24px;border-radius:5px}
+.dot:hover{background:var(--accent-600)}
+
+.projects-preview{margin:50px 0;padding:24px;border:2px solid rgba(14,165,164,0.4);border-radius:10px;background:rgba(14,165,164,0.02)}
+.preview-cta{text-align:center;padding:20px 0}
+.preview-cta .btn{display:inline-block}
+
+/* Category chip (visible on project blocks) */
+.category-chip{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.85rem;font-weight:700;color:#fff}
+.category-electrical{background:linear-gradient(90deg,var(--electrical),#ff6a3d)}
+.category-mechanical{background:linear-gradient(90deg,var(--mechanical),#6a4bff)}
+.category-software{background:linear-gradient(90deg,var(--software),#1f7fe6)}
+
+.project-body .category-chip{margin-bottom:10px}
+
+/* Projects page */
+.projects-page{padding-top:80px}
+.projects-page h1{margin-top:6px}
+.tabs{display:flex;gap:10px;margin:18px 0}
+.tab{background:var(--surface);border:1px solid rgba(12,20,40,0.06);padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--nav-bg)}
+.tab:hover{background:rgba(14,165,164,0.06)}
+.tab.active{background:linear-gradient(90deg,var(--accent),var(--accent-600));color:#fff;border-color:transparent}
+
+.projects-root{display:flex;flex-direction:column;gap:22px;margin-top:60px}
+.project-block{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:18px;background:var(--surface);border-radius:10px;box-shadow:var(--card-shadow);border:1px solid rgba(12,20,40,0.04)}
+.project-block.reverse{grid-template-columns:1fr 1fr}
+.project-media{display:flex;flex-direction:column;gap:10px}
+.project-media img{width:100%;height:320px;object-fit:cover;border-radius:8px;cursor:pointer;border:4px solid rgba(255,255,255,0.04)}
+.project-media img:hover{transform:scale(1.02);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
+
+/* Accent left border by category */
+.project-block[data-category="electrical"]{border-left:6px solid var(--electrical)}
+.project-block[data-category="mechanical"]{border-left:6px solid var(--mechanical)}
+.project-block[data-category="software"]{border-left:6px solid var(--software)}
+.project-body h3{margin:0 0 8px}
+.meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
+.project-body p{color:#0b1220}
+.project-tech{margin-top:12px;color:var(--muted);font-size:0.95rem}
+
+/* Modal for images */
+.media-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:9999}
+.media-modal[aria-hidden="false"]{display:flex}
+.media-modal-inner{position:relative;max-width:90%;max-height:90%}
+.media-modal img{display:block;max-width:100%;max-height:90vh;border-radius:8px}
+.media-close{position:absolute;right:-8px;top:-8px;background:#e8f1f7;border-radius:50%;border:0;padding:6px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:900px){
+  .project-block{grid-template-columns:1fr;}
+  .project-media img{height:220px}
+  .skills-grid{grid-template-columns:repeat(auto-fit, minmax(100px, 1fr))}
+  .slide-content{grid-template-columns:1fr;gap:12px;padding:16px}
+  .slide-image{height:220px}
+  .slide-info h4{font-size:1.1rem}
+  .carousel-slide{padding:0}
+}
+

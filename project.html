@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Thapelo Motimele</title>
+  <link rel="stylesheet" href="a.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><a href="index.html"><= Home</a></div>
+      <nav class="main-nav"><a href="index.html">Home</a><a href="#skills">Skills</a></nav>
+    </div>
+  </header>
+
+  <main class="container projects-page">
+    <h1>Projects</h1>
+
+    <div class="tabs" role="tablist" aria-label="Project categories">
+      <button class="tab active" data-tab="all" role="tab" aria-selected="true">All</button>
+      <button class="tab" data-tab="electrical" role="tab">Electrical</button>
+      <button class="tab" data-tab="mechanical" role="tab">Mechanical</button>
+      <button class="tab" data-tab="software" role="tab">Software</button>
+    </div>
+
+    <div id="projects-root" class="projects-root">
+      <!-- Projects injected by a.js -->
+    </div>
+  </main>
+
+  <div id="media-modal" class="media-modal" aria-hidden="true">
+    <div class="media-modal-inner">
+      <button id="media-close" class="media-close">✕</button>
+      <img id="media-img" src="" alt="">
+    </div>
+  </div>
+
+  
+
+  <script src="a.js"></script>
+</body>
+</html>
