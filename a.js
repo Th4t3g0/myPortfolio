@@ -16,7 +16,7 @@ const PortfolioApp = (function(){
       renderHero();
       renderAbout();
       renderSkills();
-      renderProjects();
+    renderProjects();
 		populateProjectCards();
 	  setupProjectTabs();//new additions
       renderContact();
@@ -48,7 +48,16 @@ const PortfolioApp = (function(){
         <div class="project-media">${imgHtml}</div>
         <div class="project-body">
           <div class="category-chip category-${p.category}">${catLabel}</div>
-          <h3>${p.title}</h3>
+
+<div class="project-header">
+  <h3>${p.title}</h3>
+  ${p.status ? `<span class="status-badge status-${p.status.toLowerCase().replace(' ', '-')}">${p.status}</span>` : ''}
+</div>
+
+
+          
+
+
           <div class="meta">${p.organization} • ${p.year}</div>
           <p>${p.description}</p>
           <div class="project-tech">${p.tech}</div>
@@ -146,7 +155,7 @@ const PortfolioApp = (function(){
             <div class="slide-info">
               <h4>${proj.title}</h4>
               <p class="slide-meta">${proj.organization} • ${proj.year}</p>
-              <p class="slide-desc">${proj.description}</p>
+              
               <p class="slide-tech">${proj.tech}</p>
             </div>
           </div>
