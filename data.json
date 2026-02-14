@@ -1,20 +1,20 @@
 {
   "hero": {
-    "fullName": "Thapelo Motimele",
-    "greeting": "Hi — I'm Thapelo",
-    "description": "Hello everyone  stuf stuf fdghjbknl;;lkjuhgyfrdtfyguhki rftgyuilo rtdfhyjuio rthgyjk rtyjuk."
+    "fullName": "",
+    "greeting": "Hi — I'm Thapelo Motimele",
+    "description": "Mechatronics Engineering graduate focused on the full robotics stack, including mechanical systems, electronics, embedded control, automation, and software integration."
   },
   "about": {
     "title": "About",
-    "content": "I am a Graduate Mechatronics Engineer with a strong foundation in mechanical, electrical, and software systems. My practical experience comes from academic and personal projects, where I designed, built, and tested electromechanical systems. I am passionate about solving real-world engineering problems and seeking opportunities to grow, learn, and contribute in multidisciplinary environments."
+    "content": "I am a Graduate Mechatronics Engineer from Nelson Mandela University ,with a strong foundation in mechanical, electrical, and software systems. My practical experience comes from academic and personal projects, where I designed, built, and tested electromechanical systems. I am passionate about solving real-world engineering problems and seeking opportunities to grow, learn, and contribute in multidisciplinary environments."
   },
   "skills": {
     "title": "Skills",
     "items": [
       {
-        "name": "C",
-        "logo": "images/c.jfif",
-        "category": "embedded"
+        "name": "C#",
+        "logo": "images/csharp.webp",
+        "category": "software"
       },
       {
         "name": "C/C++",
@@ -22,9 +22,9 @@
         "category": "embedded"
       },
       {
-        "name": "Yes",
-        "logo": "logos/arduino.png",
-        "category": "embedded"
+        "name": "HTML , CSS and JavaScript",
+        "logo": "images/web.webp",
+        "category": "Web development"
       },
       {
         "name": "Yes",
@@ -34,7 +34,7 @@
       {
         "name": "MATLAB",
         "logo": "images/matlab.jfif",
-        "category": "controls"
+        "category": "data analysis"
       },
       {
         "name": "Simulink",
@@ -47,9 +47,9 @@
         "category": "mechanical"
       },
       {
-        "name": "Embedded Systems",
+        "name": "Microprocessors",
         "logo": "images/embedded.jfif",
-        "category": "mechanical"
+        "category": "embedded"
       },
       {
         "name": "PLC ladder logic",
@@ -78,7 +78,7 @@
     "items": [
       {
         "id": "p1",
-        "category": "electrical",
+        "category": "mechatronics",
         "title": "Collaborative Oil Spill Containment system using Unmanned Suface Vehicles(USVs)",
         "organization": "Final Year Project",
         "year": "2025",
@@ -149,4 +149,3 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
-
