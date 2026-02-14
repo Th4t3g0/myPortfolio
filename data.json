@@ -179,7 +179,7 @@
         "description": " To ADD a description of the project",
 
         "media": [
-    
+      { "type": "image", "src": "images/gme.png" },
     { "type": "video", "src": "images/gme.mp4" }]
 
       }
@@ -195,3 +195,4 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
+
