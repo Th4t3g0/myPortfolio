@@ -126,4 +126,8 @@ body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color
   .slide-info h4{font-size:1.1rem}
   .carousel-slide{padding:0}
 }
-
+/* Status badges */
+.project-header {display: flex;justify-content: space-between;align-items: center;}
+.status-badge {font-size: 0.75rem;padding: 4px 10px;border-radius: 999px;font-weight: 600;}
+.status-completed {background: rgba(31, 230, 54, 0.12);color: var(--mechatronics);border: 1px solid rgba(31, 230, 54, 0.4);}
+.status-in-progress {background: rgba(255, 122, 92, 0.12);color: var(--electrical);border: 1px solid rgba(255, 122, 92, 0.4);}
