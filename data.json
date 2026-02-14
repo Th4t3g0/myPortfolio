@@ -90,7 +90,7 @@
       {
         "id": "p2",
         "category": "software",
-        "title": "2D Robotic Arm Artist",
+        "title": "2D 3R Robotic Arm Artist",
         "organization": "Personal Project",
         "year": "2025",
          "status": "In Progress",
@@ -155,3 +155,4 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
+
