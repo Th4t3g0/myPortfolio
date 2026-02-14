@@ -12,6 +12,7 @@
 	--electrical:#ff7a5c; /* warm orange */
 	--mechanical:#7c5cff; /* purple */
 	--software:#2b8cff; /* blue */
+	--mechatronics: #1fe636;
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
@@ -80,7 +81,7 @@ body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color
 .category-electrical{background:linear-gradient(90deg,var(--electrical),#ff6a3d)}
 .category-mechanical{background:linear-gradient(90deg,var(--mechanical),#6a4bff)}
 .category-software{background:linear-gradient(90deg,var(--software),#1f7fe6)}
-
+.category-mechatronics{background: linear-gradient(90deg, var(--mechatronics), #1fe636)}
 .project-body .category-chip{margin-bottom:10px}
 
 /* Projects page */
@@ -99,6 +100,7 @@ body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color
 .project-media img:hover{transform:scale(1.02);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
 
 /* Accent left border by category */
+.project-block[data-category="mechatronics"] {border-left: 6px solid var(--mechatronics)}
 .project-block[data-category="electrical"]{border-left:6px solid var(--electrical)}
 .project-block[data-category="mechanical"]{border-left:6px solid var(--mechanical)}
 .project-block[data-category="software"]{border-left:6px solid var(--software)}
