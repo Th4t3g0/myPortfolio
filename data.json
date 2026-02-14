@@ -82,6 +82,7 @@
         "title": "Collaborative Oil Spill Containment system using Unmanned Suface Vehicles(USVs)",
         "organization": "Final Year Project",
         "year": "2025",
+        "status": "Completed",
         "tech": "Raspeberry Pi 5, Pixhawk Flight Controller, T200 thrusters, Python, Open CV (Image processing) ",
         "description": " Autonomous USVs were developed to detect and corral oil spills in real time, addressing the limitations of traditional booms and skimmers. A leader USV with vision-based perception guides two slave USVs using a “sheepherding” strategy. Image data is processed on a Raspberry Pi, and a Pixhawk controller actuates the thrusters. The system confines oil for treatment while integrating mechanical and electrical design, demonstrating scalable autonomous containment and environmental monitoring.",
         "images": ["images/fypi2.jpeg", "images/fypi1.jpeg"]
@@ -92,6 +93,7 @@
         "title": "2D Robotic Arm Artist",
         "organization": "Personal Project",
         "year": "2025",
+         "status": "In Progress",
         "tech": "Javascript, HTML, CSS, Forward Kinematics and Inverse Kinematics",
         "description": "Developed a prototype robotic arm that accepts an image and attempts to reproduce it stroke by stroke. Motion control uses forward and inverse kinematics, applying principles from Advanced Manufacturing Systems modules. The project is ongoing, providing hands-on experience with robotics, kinematics, and automated manufacturing concepts.",
         "images": ["images/robot2.jpeg"]
@@ -103,6 +105,7 @@
         "title": "Temperature Control system",
         "organization": "Microprocessors (Academic Project)",
         "year": "2024",
+         "status": "Completed",
         "tech": "C, Arduino, Temperature sensors, Motors(fans),LCD Display",
         "description": "Designed and built a temperature-controlled fan system using an Arduino Uno and TMP35 sensor to maintain desired temperature thresholds. The system uses PWM-based fan speed control, and I independently handled the full project lifecycle, including circuit design, sensor interfacing, coding, and testing. I addressed practical challenges such as voltage-induced sensor reading disruptions and provided real-time temperature feedback through an LCD display. .",
         "images": ["images/ard.jpeg"]
@@ -114,6 +117,7 @@
         "title": "Water Tank Control System – PLC & HMI Development (Siemens TIA Portal)",
         "organization": "Process Control and Instrumentation (Academic Project)",
         "year": "2025",
+        "status": "Completed",
         "tech": "Siemens PLC, HMI",
         "description": "Developed a PLC control system for an automated water-level tank as part of a group project using Siemens TIA Portal. Ladder logic was implemented to manage fill and drain operations based on low, mid, and high-level sensor inputs, while an HMI interface was designed to provide real-time level indication, manual and automatic pump control, alarms, and safety interlocks. The system was simulated within TIA Portal to validate control logic and fault responses, with timing refinements ensuring smooth transitions between idle, filling, and draining states to enhance overall stability.",
         "images": ["images/hmi.png"]
@@ -124,6 +128,7 @@
         "title": "First PCB",
         "organization": "Personal Project",
         "year": "2026",
+        "status": "Completed",
         "tech": "Arduino, KiCAD",
         "description": "Developed a printed circuit board using KiCAD, emphasizing layout, routing, and adherence to PCB design rules. While the underlying circuits and schematics were already well understood, the project focused on mastering the complexities of PCB design, including trace routing, component placement, spacing, and overall board organization. The board was not physically fabricated, but the exercise provided valuable experience in translating functional circuits into manufacturable PCB layouts.",
         "images": ["images/pcb1.jpeg"]
@@ -134,6 +139,7 @@
         "title": "Gantry System Improvement (Isuzu project)",
         "organization": "Mechanical design (Academic Project)",
         "year": "2024",
+        "status": "Completed",
         "tech": "CAD Inventor",
         "description": "Collaborated in a two-person team to optimize an industrial gantry system, reducing downtime and production delays. Contributed to process mapping, CAD design, system modeling, and project planning. Proposed a redundancy solution with a standby unit to ensure continuous operation during maintenance and introduced buffer mechanisms to stabilize production flow within real-world space and budget constraints.",
         "images": ["images/isuzu.jpeg"]
