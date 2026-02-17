@@ -153,6 +153,7 @@
     { "type": "video", "src": "images/pcb1.mp4" }]
 
       },
+
 {
         "id": "p6",
         "category": "mechanical",
@@ -166,8 +167,8 @@
         "media": [
     { "type": "image", "src": "images/isuzu.jpeg" }]
 
-      }
-,
+      },
+
 {
         "id": "p7",
         "category": "software",
@@ -179,14 +180,45 @@
         "description": " To ADD a description of the project",
 
         "media": [
-      { "type": "image", "src": "images/gme.png" },
+    { "type": "image", "src": "images/gme.png" },
     { "type": "video", "src": "images/gme.mp4" }]
+
+      }
+,
+
+{
+        "id": "p8",
+        "category": "software",
+        "title": "Software Prototypes",
+        "organization": "Personal Project",
+        "year": "2022",
+        "status": "In Progress",
+        "tech": "HTML, CSS , JavaScript",
+        "description": " These projects were developed as part of my software engineering learning process, focusing on experimentation, debugging, and improving code structure over time.",
+
+        "media": [
+    { "type": "image", "src": "images/ch1.png" },
+    { "type": "video", "src": "images/chessv2.mp4" },
+    { "type": "image", "src": "images/ch2.png" },
+    { "type": "video", "src": "images/chessv1.mp4" },
+    { "type": "image", "src": "images/sn.png" },
+    { "type": "video", "src": "images/sn.mp4" },
+    { "type": "image", "src": "images/tt1.png" },
+    { "type": "video", "src": "images/ttt.mp4" },
+    { "type": "video", "src": "images/psim.mp4" }
+
+
+
+]
 
       }
 
 
+
     ]
   },
+
+
   "contact": {
     "title": "Contact",
     "email": "thapelomotimele1@gmail.com"
@@ -195,4 +227,3 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
-
