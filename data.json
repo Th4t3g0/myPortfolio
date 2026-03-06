@@ -206,14 +206,50 @@
     { "type": "video", "src": "images/sn.mp4" },
     { "type": "image", "src": "images/tt1.png" },
     { "type": "video", "src": "images/ttt.mp4" },
-    { "type": "video", "src": "images/psim.mp4" }
+    { "type": "video", "src": "images/psim.mp4" }]
 
-
-
-]
-
+      },
+      {
+        "id": "p9",
+        "category": "mechanical",
+        "title": "Structure Simulator",
+        "organization": "Personal Project",
+        "year": "2026",
+        "status": "In Progress",
+        "tech": "HTML, CSS , JavaScript, Mechanical engineering principles,Simulation algorithms",
+        "description": " Designed and developed a web-based structure simulator using HTML, CSS, and JavaScript. The simulator allows users to create and analyze simple structures under various loads, providing real-time feedback on stress distribution and deformation. This project serves as a practical application of structural engineering principles and offers an interactive platform for learning and experimentation.",
+        "media": [
+          {
+            "type": "image",
+            "src": "images/structuresim1.png"
+          },
+          {
+            "type": "video",
+            "src": "images/struc.mp4"
+          }
+        ]
       }
-
+,
+{
+  "id": "p10",
+  "category": "electrical",
+  "title": "Circuit Simulator",
+  "organization": "Personal Project",
+  "year": "2026",
+  "status": "In Progress",
+  "tech": "HTML, CSS , JavaScript, Electrical engineering principles,Simulation algorithms",
+  "description": " Designed and developed a web-based circuit simulator using HTML, CSS, and JavaScript. The simulator allows users to create and analyze simple circuits under various conditions, providing real-time feedback on current flow and voltage distribution. This project serves as a practical application of electrical engineering principles and offers an interactive platform for learning and experimentation.",
+  "media": [
+    {
+      "type": "image",
+      "src": "images/circuitsim.png"
+    },
+    {
+      "type": "video",
+      "src": "images/circuitsim.mp4"
+    }
+  ]
+}
 
 
     ]
@@ -228,5 +264,3 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
-
-
