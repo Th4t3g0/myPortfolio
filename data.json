@@ -1,8 +1,9 @@
 {
   "hero": {
-    "fullName": "",
+    "fullName": "Thapelo Motimele",
     "greeting": "Hi — I'm Thapelo Motimele",
-    "description": "Mechatronics Engineering graduate focused on the full robotics stack, including mechanical systems, electronics, embedded control, automation, and software integration."
+    "description": "Mechatronics Engineering graduate focused on the full robotics stack...",
+    "background": "images/hero.jpg"
   },
   "about": {
     "title": "About",
