@@ -203,17 +203,34 @@ const PortfolioApp = (function(){
 
 
 /////
-  function renderHero(){
-    const hero = portfolioData.hero || {};
-    const nameEl = $('#hero-name');
-    const greetingEl = $('#hero-greeting');
-    const descEl = $('#hero-description');
+  // function renderHero(){
+  //   const hero = portfolioData.hero || {};
+  //   const nameEl = $('#hero-name');
+  //   const greetingEl = $('#hero-greeting');
+  //   const descEl = $('#hero-description');
     
-    if(nameEl) nameEl.textContent = hero.fullName || '';
-    if(greetingEl) greetingEl.textContent = hero.greeting || '';
-    if(descEl) descEl.textContent = hero.description || '';
-  }
+  //   if(nameEl) nameEl.textContent = hero.fullName || '';
+  //   if(greetingEl) greetingEl.textContent = hero.greeting || '';
+  //   if(descEl) descEl.textContent = hero.description || '';
+  // }
+  function renderHero() {
+    const hero = portfolioData.hero || {};
+    const nameEl = document.getElementById('hero-name');
+    const greetingEl = document.getElementById('hero-greeting');
+    const descEl = document.getElementById('hero-description');
+    const bgEl = document.querySelector('.hero-bg');
 
+    if (nameEl) nameEl.textContent = hero.fullName || '';
+    if (greetingEl) greetingEl.textContent = hero.greeting || '';
+    if (descEl) descEl.textContent = hero.description || '';
+
+    if (bgEl && hero.background) {
+      bgEl.style.backgroundImage = `url('${hero.background}')`;
+      bgEl.style.backgroundSize = 'cover';
+      bgEl.style.backgroundPosition = 'center';
+      bgEl.style.backgroundAttachment = 'fixed'; // optional
+    }
+  }
   function renderAbout(){
     const about = portfolioData.about || {};
     const titleEl = $('#about-title');
