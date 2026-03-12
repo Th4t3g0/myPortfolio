@@ -5,6 +5,7 @@
     "description": "Mechatronics Engineering graduate focused on the full robotics stack, including mechanical systems, electronics, embedded control, automation, and software integration.",
     "background": "images/hero.jpg"
   },
+  "cv": "images/ThapeloMotimeleCV.pdf",
   "about": {
     "title": "About",
     "content": "I am a Graduate Mechatronics Engineer from Nelson Mandela University ,with a strong foundation in mechanical, electrical, and software systems. My practical experience comes from academic and personal projects, where I designed, built, and tested electromechanical systems. I am passionate about solving real-world engineering problems and seeking opportunities to grow, learn, and contribute in multidisciplinary environments."
@@ -216,7 +217,7 @@
         "organization": "Personal Project",
         "year": "2026",
         "status": "In Progress",
-        "tech": "Mechanical engineering principles,Simulation ,HTML, CSS , JavaScript",
+        "tech": "HTML, CSS , JavaScript, Mechanical engineering principles,Simulation algorithms",
         "description": " Designed and developed a web-based structure simulator using HTML, CSS, and JavaScript. The simulator allows users to create and analyze simple structures under various loads, providing real-time feedback on stress distribution and deformation. This project serves as a practical application of structural engineering principles and offers an interactive platform for learning and experimentation.",
         "media": [
           {
@@ -237,7 +238,7 @@
   "organization": "Personal Project",
   "year": "2026",
   "status": "In Progress",
-  "tech": "Electrical engineering principles,Simulation ,HTML, CSS , JavaScript",
+  "tech": "HTML, CSS , JavaScript, Electrical engineering principles,Simulation algorithms",
   "description": " Designed and developed a web-based circuit simulator using HTML, CSS, and JavaScript. The simulator allows users to create and analyze simple circuits under various conditions, providing real-time feedback on current flow and voltage distribution. This project serves as a practical application of electrical engineering principles and offers an interactive platform for learning and experimentation.",
   "media": [
     {
@@ -264,4 +265,3 @@
     "copyright": "© 2026 Thapelo Motimele. All rights reserved."
   }
 }
-
