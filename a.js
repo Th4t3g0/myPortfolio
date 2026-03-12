@@ -16,11 +16,12 @@ const PortfolioApp = (function(){
       renderHero();
       renderAbout();
       renderSkills();
-    renderProjects();
-		populateProjectCards();
-	  setupProjectTabs();//new additions
+      renderProjects();
+      populateProjectCards();
+      setupProjectTabs();//new additions
       renderContact();
       renderFooter();
+      renderNav(); // add CV link from data
       
       // Setup interactions
       setupCarousel();
@@ -48,7 +49,8 @@ const PortfolioApp = (function(){
         ? `<div class="project-media-carousel">
         ${p.media.map(m => {
           if (m.type === 'video') {
-            return `<video src="${m.src}" muted playsinline 
+            // don't autoplay until hover, preload only metadata
+            return `<video src="${m.src}" muted playsinline preload="metadata"
                        style="width:100%;height:280px;object-fit:cover;border-radius:8px;margin-bottom:8px;"></video>`;
           } else if (m.type === 'image') {
             return `<img src="${m.src}" alt="${p.title}" 
@@ -76,55 +78,39 @@ const PortfolioApp = (function(){
   `;
     }).join('');
 
-    // Initialize smart slideshow for project.html media
+    // Initialize smart slideshow for project.html media (hover to start/stop)
     const carousels = document.querySelectorAll('.project-media-carousel');
     carousels.forEach(carousel => {
       const slides = Array.from(carousel.children);
-      //if (slides.length <= 1) return; // no slideshow needed
-      if (slides[0].tagName === 'VIDEO') {
-        slides[0].play().catch(() => { });
-      }
-      if (slides.length === 1) {
-        slides[0].style.display = 'block';
-        return;
-      }
-      
+      if (!slides.length) return;
 
+      // show first slide statically
+      slides.forEach((s, i) => { s.style.display = i === 0 ? 'block' : 'none'; });
       let current = 0;
       let timeoutId = null;
       let isVideoPlaying = false;
 
-      // Function to show a specific slide
-      function showSlide(index) {
-        // Hide all slides
+      function showSlide(index, resetVideo = true) {
         slides.forEach(slide => { slide.style.display = 'none'; });
-
-        // Show the current slide
-        slides[index].style.display = 'block';
+        const slide = slides[index];
+        slide.style.display = 'block';
         current = index;
 
-        // Clear any existing timeout
         if (timeoutId) {
           clearTimeout(timeoutId);
           timeoutId = null;
         }
 
-        // Check if current slide is a video
-        const currentSlide = slides[current];
-        if (currentSlide.tagName === 'VIDEO') {
-          // Reset and play video
-          currentSlide.currentTime = 0;
-          currentSlide.play().catch(e => console.log('Video autoplay failed:', e));
+        if (slide.tagName === 'VIDEO') {
+          if (resetVideo) slide.currentTime = 0;
+          slide.play().catch(e => console.log('Video autoplay failed:', e));
           isVideoPlaying = true;
-
-          // When video ends, move to next slide
-          currentSlide.onended = () => {
+          slide.onended = () => {
             isVideoPlaying = false;
             const nextIndex = (current + 1) % slides.length;
             showSlide(nextIndex);
           };
         } else {
-          // For images, set timeout for 4 seconds
           isVideoPlaying = false;
           timeoutId = setTimeout(() => {
             const nextIndex = (current + 1) % slides.length;
@@ -133,50 +119,27 @@ const PortfolioApp = (function(){
         }
       }
 
-      // Start with first slide
-      showSlide(0);
-    });
-  }
+      function startSlideshow() {
+        showSlide(current, false);
+      }
 
+      function stopSlideshow() {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+          timeoutId = null;
+        }
+        const active = slides[current];
+        if (active && active.tagName === 'VIDEO') {
+          active.pause();
+        }
+        isVideoPlaying = false;
+      }
 
-
-  ///
-  // function populateProjectCards() {
-  //   const projects = portfolioData.projects?.items || [];
-  //   const containerEl = document.querySelector('#projects-root');
-  //   if (!containerEl) return;
-
-  //   containerEl.innerHTML = projects.map(p => {
-  //     const catLabel = p.category ? (p.category.charAt(0).toUpperCase() + p.category.slice(1)) : '';
-
-  //     // Media carousel for project.html
-  //     const mediaHtml = (p.media && p.media.length)
-  //       ? `<div class="project-media-carousel">
-  //         ${p.media.map(m => {
-  //         if (m.type === 'video') {
-  //           return `<video src="${m.src}" autoplay muted loop playsinline 
-  //                      style="width:100%;height:280px;object-fit:cover;border-radius:8px;margin-bottom:8px;"></video>`;
-  //         } else if (m.type === 'image') {
-  //           return `<img src="${m.src}" alt="${p.title}" 
-  //                      style="width:100%;height:280px;object-fit:cover;border-radius:8px;margin-bottom:8px;">`;
-  //         }
-  //         return '';
-  //       }).join('')}
-  //       </div>`
-  //       : `<div style="height:280px;background:#f3f4f6;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9ca3af;margin-bottom:8px">No media</div>`;
-
-  //     return `
-  //     <article class="project-block" data-category="${p.category}">
-  //       ${mediaHtml}
-  //       <div class="project-body">
-  //         <div class="category-chip category-${p.category}">${catLabel}</div>
-  //         <div class="project-header">
-  //           <h3>${p.title}</h3>
-  //           ${p.status ? `<span class="status-badge status-${p.status.toLowerCase().replace(' ', '-')}">${p.status}</span>` : ''}
-  //         </div>
-  //         <div class="meta">${p.organization} • ${p.year}</div>
-  //         <p>${p.description}</p>
-  //         <div class="project-tech">${p.tech}</div>
+      const parent = carousel.closest('.project-block') || carousel;
+      parent.addEventListener('mouseenter', startSlideshow);
+      parent.addEventListener('mouseleave', stopSlideshow);
+      }); // end carousel forEach
+    } // end populateProjectCards
   //       </div>
   //     </article>
   //   `;
@@ -213,6 +176,18 @@ const PortfolioApp = (function(){
   //   if(greetingEl) greetingEl.textContent = hero.greeting || '';
   //   if(descEl) descEl.textContent = hero.description || '';
   // }
+  function renderNav() {
+    const nav = document.querySelector('.main-nav');
+    if (!nav || !portfolioData.cv) return;
+    const link = document.createElement('a');
+    link.href = portfolioData.cv;
+    link.textContent = 'Download CV';
+    link.setAttribute('download', '');
+    // keep same link spacing as other nav items
+    link.style.marginLeft = '18px';
+    nav.appendChild(link);
+  }
+
   function renderHero() {
     const hero = portfolioData.hero || {};
     const nameEl = document.getElementById('hero-name');
@@ -446,10 +421,4 @@ function renderProjects(){
   return { portfolioData };
 })();
 
-
-
-
-
-
-
-
+///End
