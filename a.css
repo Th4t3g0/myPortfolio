@@ -26,6 +26,8 @@ body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color
 .main-nav a{margin-left:18px;color:rgba(255,255,255,0.8);text-decoration:none;padding:6px 8px;border-radius:6px}
 .main-nav a:hover{background:rgba(255,255,255,0.03);color:#fff}
 
+/* CV download button in header */
+
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;opacity:1;transition:max-height 0.4s ease, opacity 0.3s ease;max-height:100vh;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;filter:brightness(0.45)}
