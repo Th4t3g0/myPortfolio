@@ -16,6 +16,7 @@ const PortfolioApp = (function(){
       renderHero();
       renderAbout();
       renderSkills();
+      renderExperience();
       renderProjects();
       populateProjectCards();
       setupProjectTabs();//new additions
@@ -193,17 +194,16 @@ const PortfolioApp = (function(){
     const nameEl = document.getElementById('hero-name');
     const greetingEl = document.getElementById('hero-greeting');
     const descEl = document.getElementById('hero-description');
-    const bgEl = document.querySelector('.hero-bg');
 
     if (nameEl) nameEl.textContent = hero.fullName || '';
     if (greetingEl) greetingEl.textContent = hero.greeting || '';
     if (descEl) descEl.textContent = hero.description || '';
 
-    if (bgEl && hero.background) {
-      bgEl.style.backgroundImage = `url('${hero.background}')`;
-      bgEl.style.backgroundSize = 'cover';
-      bgEl.style.backgroundPosition = 'center';
-      bgEl.style.backgroundAttachment = 'fixed'; // optional
+    if (hero.background) {
+      const bgEl = document.getElementById('page-bg');
+      if (bgEl) {
+        bgEl.style.backgroundImage = `url('${hero.background}')`;
+      }
     }
   }
   function renderAbout(){
@@ -229,6 +229,25 @@ const PortfolioApp = (function(){
             <img src="${skill.logo}" alt="${skill.name} Logo" title="${skill.name}">
           </div>
           <div class="skill-name">${skill.name}</div>
+        </div>
+      `).join('');
+    }
+  }
+
+  function renderExperience(){
+    const experience = portfolioData.experience || {};
+    const titleEl = $('#experience-title');
+    const listEl = $('#experience-list');
+    
+    if(titleEl) titleEl.textContent = experience.title || '';
+    
+    if(listEl && experience.items){
+      listEl.innerHTML = experience.items.map(exp => `
+        <div class="experience-item">
+          <h4>${exp.position}</h4>
+          <p class="company">${exp.company}</p>
+          <p class="dates">${exp.dates}</p>
+          <p>${exp.description}</p>
         </div>
       `).join('');
     }
@@ -392,21 +411,15 @@ function renderProjects(){
   }
 
   function setupScrollEffects(){
-    const hero = $('.hero');
-    if(hero) {
-      let lastScrollY = 0;
+    const bgEl = document.getElementById('page-bg');
+    const overlayEl = document.getElementById('page-overlay');
+    if(bgEl && overlayEl) {
       window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        if(currentScrollY > lastScrollY && currentScrollY > 100) {
-          hero.style.maxHeight = '0';
-          hero.style.overflow = 'hidden';
-          hero.style.opacity = '0';
-        } else if(currentScrollY < 100) {
-          hero.style.maxHeight = '100vh';
-          hero.style.overflow = 'visible';
-          hero.style.opacity = '1';
-        }
-        lastScrollY = currentScrollY;
+        const blurAmount = Math.min(currentScrollY / 100, 10); // max 10px blur
+        const shadeOpacity = Math.min(currentScrollY / 500, 0.5); // max 0.5 opacity
+        bgEl.style.filter = `blur(${blurAmount}px)`;
+        overlayEl.style.backgroundColor = `rgba(173, 216, 230, ${shadeOpacity})`;
       }, { passive: true });
     }
   }
@@ -421,4 +434,4 @@ function renderProjects(){
   return { portfolioData };
 })();
 
-///End
+
